@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+        <title>Todo</title>
+        <style>
+            #app {
+                text-align: center;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app" />
+        <script type="text/babel">
+            // class SingleTodo extends React.Component {
+            //     render() {
+            //         return (
+            //             <li>{this.props.todo}<button onClick={this.props.delete}>X</button></li>
+            //         );
+            //     }
+            // }
+            
+            //函数组件
+            const SingleTodo = props => {
+                return (
+                    <li>{props.todo}<button onClick={props.delete}>X</button></li>
+                );
+            }
+
+            class App extends React.Component {
+
+                constructor(props) {
+                    super(props);
+                    this.state = {
+                        todos: [],
+                        currentTodo: ""
+                    };
+                }
+                
+                onInputChange = (event) => {
+                    this.setState({
+                        currentTodo: event.target.value
+                    });
+                }
+
+                onClick = () => {
+                    const todosCopy = this.state.todos.slice();
+                    todosCopy.push(this.state.currentTodo);
+
+                    this.setState({
+                        todos: todosCopy,
+                        currentTodo: ""
+                    })
+                }
+                
+                deleteTodo = i => {
+                    const todosCopy = this.state.todos.slice();
+                    todosCopy.splice(i, 1);
+                    this.setState({
+                        todos: todosCopy
+                    });
+                }
+
+                render() {
+                    const bulletedTodos = this.state.todos.map((e, i) => {
+                        return (
+                            <SingleTodo todo={e} delete={() => this.deleteTodo(i)}/>
+                        );
+                    });
+
+                    return (
+                        <div>
+                            <input placeholder="Enter todo" value={this.state.currentTodo}
+                                onChange={this.onInputChange}/>
+                            <button onClick={this.onClick}>Add!</button>
+                            {this.state.todos.length === 0 ? "No todos yet!" : <ul>{bulletedTodos}</ul>}
+                        </div>
+                    );
+                } 
+            }
+
+            ReactDOM.render(<App />, document.querySelector("#app"));
+        </script>
+    </body>
+</html>

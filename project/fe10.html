@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+						<ul class="actions vertical">
+							<li><a href="#" class="button special fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Generic</h1>
+									</header>
+									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+
+									<p></p>
+								</div>
+							</section>
+
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            .gua-hide {
+                display: none;
+            }
+            .gua-menu-content {
+                height: 100px;
+                border: 1px solid red;
+            }
+            .gua-item {
+                /*display: inline-block;*/
+                /*opacity: 0.6;*/
+                filter: grayscale(100%);
+            }
+            .gua-item.gua-highlight {
+                filter: initial;
+                /*opacity: 1;*/
+            }
+            .gua-item.gua-highlight img {
+                width: 150px;
+                height: 150px;
+            }
+            img {
+                /*transition 这个 css 指定了某个属性发生变化的时候自动使用动画效果和动画时间*/
+                transition: width 1s, height 1s;
+            }
+            .gua-item img {
+                width: 100px;
+                height: 100px;
+            }
+
+            /*3. 轮播图*/
+            .gua-slide {
+                position: relative;
+                width: 590px;
+            }
+            .gua-slide-image {
+                display: none;
+            }
+            /*gua-slide-image*/
+            .gua-active {
+                display: inline-block;
+            }
+            .gua-slide-button {
+                right: 0;
+                height: 50px;
+                width: 30px;
+
+                color: #fff;
+                background: black;
+                opacity: 0.3;
+
+                border: none;
+
+                cursor: pointer;
+            }
+            .gua-slide-button:focus {
+                outline: none;
+            }
+
+            .gua-slide-button.gua-left {
+                left: 0;
+            }
+            .gua-slide-button.gua-right {
+                right: 0;
+            }
+            /*
+            用来垂直居中的一个套路 css
+            */
+            .gua-vertical-center {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .gua-slide-indicators {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 10px;
+            }
+            .gua-slide-indi {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: red;
+            }
+            .gua-white {
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 轮播图 -->
+        <div class="gua-3">
+            <!-- data-imgs 是图片的总数 -->
+            <!-- data-active 是当前显示的图片的下标 -->
+            <div class="gua-slide" data-imgs="3" data-active="0">
+                <img id="id-guaimage-0" class="gua-slide-image gua-active" src="slideimages/1.jpg" alt="">
+                <img id="id-guaimage-1" class="gua-slide-image" src="slideimages/2.jpg" alt="">
+                <img id="id-guaimage-2" class="gua-slide-image" src="slideimages/3.jpg" alt="">
+                <!--
+                要在 html 里面表示 < > 这样的特殊符号的时候, 必须使用 HTML 转义符号
+                &lt; 表示 <
+                &gt; 表示 >
+                -->
+                <button class="gua-slide-button gua-left gua-vertical-center" data-offset="-1">&lt;</button>
+                <button class="gua-slide-button gua-right gua-vertical-center" data-offset="1">&gt;</button>
+                <div class="gua-slide-indicators">
+                    <div id="id-indi-0" class="gua-slide-indi gua-white"
+                        data-index="0"></div>
+                    <div id="id-indi-1" class="gua-slide-indi"
+                        data-index="1"></div>
+                    <div id="id-indi-2" class="gua-slide-indi"
+                        data-index="2"></div>
+                </div>
+            </div>
+        </div>
+        <script src="gua.js"></script>
+        <script src="3.js"></script>
+    </body>
+</html> -->

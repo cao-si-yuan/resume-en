@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+       <title>组件</title>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+       <link rel="stylesheet" href="assets/css/main.css" />
+   </head>
+   <style>
+               /*3. 轮播图*/
+               .gua-slide {
+                   position: relative;
+                   width: 590px;
+               }
+               .gua-slide-image {
+                   display: none;
+               }
+               /*gua-slide-image*/
+               .gua-active {
+                   display: inline-block;
+               }
+               .gua-slide-button {
+                   right: 0;
+                   height: 50px;
+                   width: 30px;
+
+                   color: #fff;
+                   background: black;
+                   opacity: 0.3;
+
+                   border: none;
+
+                   cursor: pointer;
+               }
+               .gua-slide-button:focus {
+                   outline: none;
+               }
+
+               .gua-slide-button.gua-left {
+                   left: 0;
+               }
+               .gua-slide-button.gua-right {
+                   right: 0;
+               }
+               /*
+               用来垂直居中的一个套路 css
+               */
+               .gua-vertical-center {
+                   position: absolute;
+                   top: 50%;
+                   transform: translateY(-50%);
+               }
+               .gua-slide-indicators {
+                   position: absolute;
+                   left: 50%;
+                   transform: translateX(-50%);
+                   bottom: 10px;
+               }
+               .gua-slide-indi {
+                   display: inline-block;
+                   width: 10px;
+                   height: 10px;
+                   border-radius: 50%;
+                   background: red;
+               }
+               .gua-white {
+                   background: white;
+               }
+    </style>
+   <body>
+               <!-- 轮播图 -->
+                   <div class="gua-3">
+                       <!-- data-imgs 是图片的总数 -->
+                       <!-- data-active 是当前显示的图片的下标 -->
+                       <div class="gua-slide" data-imgs="3" data-active="0">
+                           <img id="id-guaimage-0" class="gua-slide-image gua-active" src="slideimages/1.jpg" alt="">
+                           <img id="id-guaimage-1" class="gua-slide-image" src="slideimages/2.jpg" alt="">
+                           <img id="id-guaimage-2" class="gua-slide-image" src="slideimages/3.jpg" alt="">
+                           <!--
+                           要在 html 里面表示 < > 这样的特殊符号的时候, 必须使用 HTML 转义符号
+                           &lt; 表示 <
+                           &gt; 表示 >
+                           -->
+                           <button class="gua-slide-button gua-left gua-vertical-center" data-offset="-1">&lt;</button>
+                           <button class="gua-slide-button gua-right gua-vertical-center" data-offset="1">&gt;</button>
+                           <div class="gua-slide-indicators">
+                               <div id="id-indi-0" class="gua-slide-indi gua-white"
+                                   data-index="0"></div>
+                               <div id="id-indi-1" class="gua-slide-indi"
+                                   data-index="1"></div>
+                               <div id="id-indi-2" class="gua-slide-indi"
+                                   data-index="2"></div>
+                           </div>
+                       </div>
+                   </div>
+           <script src="gua.js"></script>
+           <script src="3.js"></script>
+   </body>
+</html>
